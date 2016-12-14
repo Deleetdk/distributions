@@ -10,7 +10,7 @@ library(tidyverse)
 sample_size = 1e4
 
 shinyServer(function(input, output) {
-
+  
   output$dist <- renderPlot({
     #generate data
     set.seed(input$seed)
