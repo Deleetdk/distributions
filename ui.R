@@ -145,12 +145,18 @@ shinyUI(fluidPage(
       numericInput("seed",
                   label = "Seed (for number generation)",
                   value = 1
-                  )
+                  ),
+      #bins
+      numericInput("bins",
+                   label = "Bins",
+                   value = 101
+      ),
+      
     ),
 
     # Show a plot of the generated distribution
     mainPanel(
-      HTML("<p>Much of statistics employs one or more <a href='https://en.wikipedia.org/wiki/List_of_probability_distributions'>(probability) distributions</a> in the modeling or simulation of data. The parameters of the distributions makes it possible to briefly describe the distribution of values. One can also proceed reversely and use the distribution parameters to simulate datasets. One can then play around with the parameters to get a feel for how they work.</p>"),
+      HTML("<p>Much of statistics employs one or more <a href='https://en.wikipedia.org/wiki/List_of_probability_distributions'>(probability) distributions</a> in the modeling or simulation of data. The parameters of the distributions makes it possible to briefly describe the distribution of values. One can also proceed reversely and use the distribution parameters to simulate datasets. One can then play around with the parameters to get a feel for how they work. There are 10,000 datapoints in the plots below.</p>"),
       plotOutput("dist"),
       hr(),
       HTML("<p>Made by <a href='http://emilkirkegaard.dk/'>Emil O. W. Kirkegaard</a> using <a href='http://shiny.rstudio.com/'>Shiny</a> for R. Source code available <a href='https://github.com/Deleetdk/distributions'>on Github</a>.</p>")
